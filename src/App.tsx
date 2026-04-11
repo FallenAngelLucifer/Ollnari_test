@@ -115,14 +115,14 @@ const puntosMapa = [
 ];
 
 const productos = [
-  { id: 1, nombre: "Hamaca de Hilo de Algodón", ciudad: "Masaya", precio: 1500, imagen: "images/hamaca_algodon.jpg", descripcion: "Hamaca tradicional de doble puntada, tejida a mano en el barrio de Monimbó. Perfecta para exteriores e interiores, ofreciendo un descanso inigualable." },
-  { id: 2, nombre: "Vasija de Cerámica Precolombina", ciudad: "Masaya", precio: 1200, imagen: "images/ceramica_precolombina.jpg", descripcion: "Elaborada en San Juan de Oriente utilizando técnicas ancestrales de cocción a leña y engobes naturales. Sus grabados cuentan historias de nuestros ancestros." },
-  { id: 3, nombre: "Escultura en Marmolina", ciudad: "Estelí", precio: 850, imagen: "images/escultura_marmolina.jpeg", descripcion: "Figura tallada a mano en piedra de marmolina de San Juan de Limay. Representa la vida campesina y la figura femenina con texturas increíblemente suaves." },
-  { id: 4, nombre: "Garza de Madera de Balsa", ciudad: "Solentiname", precio: 450, imagen: "images/garza_madera.jpeg", descripcion: "Pieza de arte primitivista tallada en madera de balsa y pintada con colores vibrantes que reflejan la rica biodiversidad del archipiélago." },
-  { id: 5, nombre: "Sombrero de Pita Fino", ciudad: "Camoapa", precio: 1800, imagen: "images/sombrero_pita.jpeg", descripcion: "Sombrero artesanal tejido finamente en cuevas para mantener la humedad de la fibra. Ligero, fresco, elegante y 100% biodegradable." },
-  { id: 6, nombre: "Jícara de Filigrana Tallada", ciudad: "Rivas", precio: 600, imagen: "images/jicara_tallada.jpeg", descripcion: "Jícara tradicional tallada a mano con técnica de filigrana. Una pieza decorativa que demuestra la paciencia y precisión de los artesanos del sur." },
-  { id: 7, nombre: "Bolso de Cuero Repujado", ciudad: "Estelí", precio: 2200, imagen: "images/bolso_cuero.jpeg", descripcion: "Bolso de cuero 100% genuino, trabajado con técnicas de talabartería tradicional y repujado a mano con motivos florales." },
-  { id: 8, nombre: "Tapiz Tejido en Telar", ciudad: "Masaya", precio: 1100, imagen: "images/tapiz_telar.jpeg", descripcion: "Tapiz decorativo tejido en telar de cintura con hilos de algodón teñidos naturalmente. Aporta calidez y textura a cualquier espacio." }
+  { id: 1, nombre: "Hamaca de Hilo de Algodón", ciudad: "Masaya", precio: 1500, imagen: "/images/hamaca_algodon.jpg", descripcion: "Hamaca tradicional de doble puntada, tejida a mano en el barrio de Monimbó. Perfecta para exteriores e interiores, ofreciendo un descanso inigualable." },
+  { id: 2, nombre: "Vasija de Cerámica Precolombina", ciudad: "Masaya", precio: 1200, imagen: "/images/ceramica_precolombina.jpg", descripcion: "Elaborada en San Juan de Oriente utilizando técnicas ancestrales de cocción a leña y engobes naturales. Sus grabados cuentan historias de nuestros ancestros." },
+  { id: 3, nombre: "Escultura en Marmolina", ciudad: "Estelí", precio: 850, imagen: "/images/escultura_marmolina.jpeg", descripcion: "Figura tallada a mano en piedra de marmolina de San Juan de Limay. Representa la vida campesina y la figura femenina con texturas increíblemente suaves." },
+  { id: 4, nombre: "Garza de Madera de Balsa", ciudad: "Solentiname", precio: 450, imagen: "/images/garza_madera.jpeg", descripcion: "Pieza de arte primitivista tallada en madera de balsa y pintada con colores vibrantes que reflejan la rica biodiversidad del archipiélago." },
+  { id: 5, nombre: "Sombrero de Pita Fino", ciudad: "Camoapa", precio: 1800, imagen: "/images/sombrero_pita.jpeg", descripcion: "Sombrero artesanal tejido finamente en cuevas para mantener la humedad de la fibra. Ligero, fresco, elegante y 100% biodegradable." },
+  { id: 6, nombre: "Jícara de Filigrana Tallada", ciudad: "Rivas", precio: 600, imagen: "/images/jicara_tallada.jpeg", descripcion: "Jícara tradicional tallada a mano con técnica de filigrana. Una pieza decorativa que demuestra la paciencia y precisión de los artesanos del sur." },
+  { id: 7, nombre: "Bolso de Cuero Repujado", ciudad: "Estelí", precio: 2200, imagen: "/images/bolso_cuero.jpeg", descripcion: "Bolso de cuero 100% genuino, trabajado con técnicas de talabartería tradicional y repujado a mano con motivos florales." },
+  { id: 8, nombre: "Tapiz Tejido en Telar", ciudad: "Masaya", precio: 1100, imagen: "/images/tapiz_telar.jpg", descripcion: "Tapiz decorativo tejido en telar de cintura con hilos de algodón teñidos naturalmente. Aporta calidez y textura a cualquier espacio." }
 ];
 
 const artesanos = [
@@ -131,7 +131,7 @@ const artesanos = [
     nombre: "Helio Gutiérrez", 
     especialidad: "Cerámica Precolombina", 
     ciudad: "San Juan de Oriente", 
-    imagen: "images/helio_gutierrez.jpeg",
+    imagen: "/images/helio_gutierrez.jpeg",
     experiencia: "35 años",
     taller: "Taller de Arte Gutiérrez",
     descripcion: "Reconocido internacionalmente por rescatar técnicas precolombinas. Su trabajo con engobes naturales y bruñido a mano ha sido expuesto en galerías de Europa y América Latina. Cada pieza cuenta una historia de nuestros ancestros chorotegas, utilizando únicamente arcilla local y pigmentos minerales.",
@@ -143,7 +143,7 @@ const artesanos = [
     nombre: "Familia Suazo", 
     especialidad: "Tejido de Hamacas", 
     ciudad: "Masaya", 
-    imagen: "images/familia_suazo.jpeg",
+    imagen: "/images/familia_suazo.jpeg",
     experiencia: "3 Generaciones",
     taller: "Hamacas El Carmen",
     descripcion: "Una familia dedicada por más de tres generaciones al arte del tejido en telar. Especialistas en la técnica de doble puntada de Masaya, crean hamacas que no solo son piezas de descanso, sino verdaderas obras de arte textil que combinan resistencia y belleza geométrica.",
@@ -155,7 +155,7 @@ const artesanos = [
     nombre: "Cooperativa de Mujeres", 
     especialidad: "Talla en Marmolina", 
     ciudad: "San Juan de Limay", 
-    imagen: "images/cooperativa_mujeres.jpeg",
+    imagen: "/images/cooperativa_mujeres.jpeg",
     experiencia: "20 años",
     taller: "Manos de Limay",
     descripcion: "Un colectivo de mujeres valientes que transformaron la dura piedra de marmolina en su medio de vida. Sus esculturas, caracterizadas por texturas increíblemente suaves y formas voluptuosas, representan la vida cotidiana, la maternidad y la naturaleza nicaragüense.",
@@ -167,7 +167,7 @@ const artesanos = [
     nombre: "Taller de Arte Solentiname", 
     especialidad: "Pintura Primitivista", 
     ciudad: "Solentiname", 
-    imagen: "images/taller_solentiname.jpeg",
+    imagen: "/images/taller_solentiname.jpeg",
     experiencia: "40 años",
     taller: "Comunidad de Pintores",
     descripcion: "Herederos del movimiento fundado por Ernesto Cardenal. Este taller captura la exuberante flora, fauna y la vida campesina del archipiélago en piezas de madera de balsa, utilizando colores vibrantes que transmiten la paz y la espiritualidad del lago Cocibolca.",
@@ -179,7 +179,7 @@ const artesanos = [
     nombre: "Tejedoras de Camoapa", 
     especialidad: "Tejido Fino en Pita", 
     ciudad: "Camoapa", 
-    imagen: "images/tejedoras_camoapa.jpeg",
+    imagen: "/images/tejedoras_camoapa.jpeg",
     experiencia: "25 años",
     taller: "Asociación de Artesanas",
     descripcion: "Maestras en el delicado y laborioso arte de tejer la fibra de pita. Su trabajo requiere condiciones específicas de humedad y una paciencia infinita para crear sombreros tan finos que pueden doblarse y guardarse en un bolsillo sin perder su forma.",
@@ -191,7 +191,7 @@ const artesanos = [
     nombre: "Talabartería El Potro", 
     especialidad: "Repujado en Cuero", 
     ciudad: "Estelí", 
-    imagen: "images/talabarteria_el_potro.jpeg",
+    imagen: "/images/talabarteria_el_potro.jpeg",
     experiencia: "15 años",
     taller: "Taller Hermanos Ruiz",
     descripcion: "Representantes de la fuerte tradición ganadera del norte de Nicaragua. Especialistas en el repujado manual del cuero, creando diseños florales y geométricos profundos que adornan desde monturas hasta elegantes bolsos y cinturones de uso diario.",
@@ -201,12 +201,12 @@ const artesanos = [
 ];
 
 const talleres = [
-  { id: 201, titulo: "Modelado en Barro y Engobes", categoria: "Cerámica", duracion: "4 Semanas", nivel: "Básico", precio: 600, imagen: "images/modelado_barro.jpeg", instructor: "Taller Helio Gutiérrez", descripcion: "Aprende las técnicas milenarias de San Juan de Oriente. Desde la preparación del barro hasta el uso de engobes naturales para dar color a tus piezas sin químicos.", temario: ["Preparación de la arcilla", "Técnicas de modelado manual", "Aplicación de engobes", "Proceso de bruñido y horneado"] },
-  { id: 202, titulo: "Tejido de Hamacas en Telar", categoria: "Textil", duracion: "6 Semanas", nivel: "Intermedio", precio: 800, imagen: "images/tejido_hamacas.jpeg", instructor: "Familia Suazo", descripcion: "Domina el arte del tejido de doble puntada característico de Masaya. Crea tu propia hamaca paso a paso con la guía de maestros tejedores.", temario: ["Uso del telar tradicional", "Técnica de doble puntada", "Elaboración de los brazos", "Acabados y flecos decorativos"] },
-  { id: 203, titulo: "Talla y Pulido de Marmolina", categoria: "Piedra", duracion: "4 Semanas", nivel: "Básico", precio: 500, imagen: "images/tallado_marmolina.jpeg", instructor: "Cooperativa de Limay", descripcion: "Descubre cómo transformar la rústica piedra de marmolina en esculturas de texturas increíblemente suaves, representando la vida cotidiana nicaragüense.", temario: ["Selección de la piedra", "Uso de herramientas de desbaste", "Técnicas de tallado", "Lijado y pulido final"] },
-  { id: 204, titulo: "Pintura Primitivista en Madera", categoria: "Pintura", duracion: "3 Semanas", nivel: "Básico", precio: 450, imagen: "images/pintura_primitivista.jpeg", instructor: "Taller de Arte Solentiname", descripcion: "Sumérgete en los colores vibrantes del archipiélago de Solentiname. Aprende a plasmar la flora y fauna local en piezas de madera de balsa.", temario: ["Preparación de la madera", "Bocetaje primitivista", "Teoría del color local", "Aplicación de acrílicos y sellado"] },
-  { id: 205, titulo: "Extracción y Tejido de Pita", categoria: "Textil", duracion: "5 Semanas", nivel: "Avanzado", precio: 700, imagen: "images/tejido_pita.jpeg", instructor: "Tejedoras de Camoapa", descripcion: "Un curso avanzado sobre el delicado proceso de tejer sombreros de pita. Conoce los secretos de la humedad y la tensión para lograr un tejido fino.", temario: ["Procesamiento de la fibra", "Inicio de la copa", "Tejido del ala", "Remate y planchado"] },
-  { id: 206, titulo: "Repujado en Cuero Tradicional", categoria: "Cuero", duracion: "4 Semanas", nivel: "Intermedio", precio: 850, imagen: "images/repujado_cuero.jpeg", instructor: "Talabartería El Potro", descripcion: "Aprende las técnicas de la talabartería norteña. Desde el corte y preparación del cuero hasta el repujado de motivos florales y geométricos.", temario: ["Tipos de cuero y herramientas", "Trazado de diseños", "Técnicas de repujado", "Teñido y acabados"] }
+  { id: 201, titulo: "Modelado en Barro y Engobes", categoria: "Cerámica", duracion: "4 Semanas", nivel: "Básico", precio: 600, imagen: "/images/modelado_barro.jpeg", instructor: "Taller Helio Gutiérrez", descripcion: "Aprende las técnicas milenarias de San Juan de Oriente. Desde la preparación del barro hasta el uso de engobes naturales para dar color a tus piezas sin químicos.", temario: ["Preparación de la arcilla", "Técnicas de modelado manual", "Aplicación de engobes", "Proceso de bruñido y horneado"] },
+  { id: 202, titulo: "Tejido de Hamacas en Telar", categoria: "Textil", duracion: "6 Semanas", nivel: "Intermedio", precio: 800, imagen: "/images/tejido_hamacas.jpeg", instructor: "Familia Suazo", descripcion: "Domina el arte del tejido de doble puntada característico de Masaya. Crea tu propia hamaca paso a paso con la guía de maestros tejedores.", temario: ["Uso del telar tradicional", "Técnica de doble puntada", "Elaboración de los brazos", "Acabados y flecos decorativos"] },
+  { id: 203, titulo: "Talla y Pulido de Marmolina", categoria: "Piedra", duracion: "4 Semanas", nivel: "Básico", precio: 500, imagen: "/images/tallado_marmolina.jpeg", instructor: "Cooperativa de Limay", descripcion: "Descubre cómo transformar la rústica piedra de marmolina en esculturas de texturas increíblemente suaves, representando la vida cotidiana nicaragüense.", temario: ["Selección de la piedra", "Uso de herramientas de desbaste", "Técnicas de tallado", "Lijado y pulido final"] },
+  { id: 204, titulo: "Pintura Primitivista en Madera", categoria: "Pintura", duracion: "3 Semanas", nivel: "Básico", precio: 450, imagen: "/images/pintura_primitivista.jpeg", instructor: "Taller de Arte Solentiname", descripcion: "Sumérgete en los colores vibrantes del archipiélago de Solentiname. Aprende a plasmar la flora y fauna local en piezas de madera de balsa.", temario: ["Preparación de la madera", "Bocetaje primitivista", "Teoría del color local", "Aplicación de acrílicos y sellado"] },
+  { id: 205, titulo: "Extracción y Tejido de Pita", categoria: "Textil", duracion: "5 Semanas", nivel: "Avanzado", precio: 700, imagen: "/images/tejido_pita.jpeg", instructor: "Tejedoras de Camoapa", descripcion: "Un curso avanzado sobre el delicado proceso de tejer sombreros de pita. Conoce los secretos de la humedad y la tensión para lograr un tejido fino.", temario: ["Procesamiento de la fibra", "Inicio de la copa", "Tejido del ala", "Remate y planchado"] },
+  { id: 206, titulo: "Repujado en Cuero Tradicional", categoria: "Cuero", duracion: "4 Semanas", nivel: "Intermedio", precio: 850, imagen: "/images/repujado_cuero.jpeg", instructor: "Talabartería El Potro", descripcion: "Aprende las técnicas de la talabartería norteña. Desde el corte y preparación del cuero hasta el repujado de motivos florales y geométricos.", temario: ["Tipos de cuero y herramientas", "Trazado de diseños", "Técnicas de repujado", "Teñido y acabados"] }
 ];
 
 const equipo = [
