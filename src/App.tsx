@@ -596,16 +596,39 @@ export default function App() {
   };
 
   const VistaMapa = () => {
-    const [puntoSeleccionado, setPuntoSeleccionado] = useState(puntosMapa[2]); // Default Masaya
+    // Cambiamos el nombre a "seleccionActual" porque puede ser un Departamento o un Lugar específico
+    const [seleccionActual, setSeleccionActual] = useState<any>(puntosMapa[2]); 
     const [filtroCategoria, setFiltroCategoria] = useState('todas');
 
     const puntosFiltrados = filtroCategoria === 'todas' 
       ? puntosMapa 
       : puntosMapa.filter(p => p.categoria === filtroCategoria);
 
+    // NUEVA FUNCIÓN: Hace que TODO el mapa sea clickeable
+    const handleRegionClick = (regionNombre: string) => {
+      // 1. Le agregamos ": any" para que TypeScript no sea tan estricto con la estructura
+      let infoDepto: any = puntosMapa.find(p => p.nombre === regionNombre);
+      
+      // 2. Si haces clic en una ciudad que aún no tiene datos en tu array, le creamos información genérica al vuelo.
+      if (!infoDepto) {
+        infoDepto = {
+          id: Date.now(), // <-- ¡Solución! Ahora el ID es un número único, no un texto.
+          nombre: regionNombre,
+          departamento: regionNombre, 
+          categoria: 'historia',
+          tipo: 'Departamento',
+          historia: `La información histórica y patrimonial de ${regionNombre} estará disponible próximamente en nuestra base de datos.`,
+          cultura: `Explorando las tradiciones, economía creativa y maestros artesanos de la región de ${regionNombre}.`,
+          imagen: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=500&q=80" 
+        };
+      }
+      
+      setSeleccionActual(infoDepto);
+    };
+
     return (
       <div className="pt-20 pb-24 bg-beige min-h-screen animate-in fade-in duration-500">
-        {/* Hero Mapa */}
+        {/* ... Hero del Mapa (Igual) ... */}
         <div className="relative bg-coffee text-white py-24 px-6 overflow-hidden">
           <div className="absolute inset-0 opacity-30 mix-blend-multiply">
             <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1920&q=80" alt="Mapa de Nicaragua" className="w-full h-full object-cover" />
@@ -655,37 +678,35 @@ export default function App() {
             {/* Contenedor del Mapa (Izquierda) */}
             <div className="lg:w-2/3 relative bg-[#eef2f5] rounded-[2rem] overflow-hidden min-h-[600px] lg:min-h-[700px] flex items-center justify-center border-4 border-beige shadow-inner">
               
-              {/* Imagen del Mapa de Nicaragua (Outline) */}
               <div className="absolute inset-0 p-8 opacity-90">
                 <MapaSvg 
                   className="w-full h-full drop-shadow-2xl"
-                  activeRegion={puntoSeleccionado.nombre}
-                  onRegionClick={(region) => {
-                    const punto = puntosMapa.find(p => p.nombre === region);
-                    if (punto) setPuntoSeleccionado(punto);
-                  }}
+                  // Esta línea verifica si el marcador tiene asignado un departamento para no perder el color de fondo
+                  activeRegion={seleccionActual.departamento || seleccionActual.nombre}
+                  onRegionClick={handleRegionClick} // Llama a la función que revisamos arriba
                 >
                   {/* Pines Interactivos */}
                   {puntosFiltrados.map(punto => {
                     const categoria = categoriasMapa.find(c => c.id === punto.categoria) || categoriasMapa[0];
                     const Icon = categoria.icon;
-                    const isSelected = puntoSeleccionado.id === punto.id;
+                    const isSelected = seleccionActual.id === punto.id;
 
                     return (
                       <Marker key={punto.id} coordinates={punto.coordinates as [number, number]}>
                         <g
                           className={`group transition-all duration-500 ease-out ${isSelected ? 'z-40' : 'z-20 hover:z-50'}`}
-                          onClick={() => setPuntoSeleccionado(punto)}
+                          onClick={(e) => {
+                            // ¡Súper importante! Esto detiene el clic para que no toque la ciudad de fondo
+                            e.stopPropagation(); 
+                            setSeleccionActual(punto);
+                          }}
                           style={{ cursor: 'pointer' }}
                         >
                           <foreignObject x="-24" y="-24" width="48" height="48" style={{ overflow: 'visible' }}>
                             <div className="relative w-12 h-12">
-                              {/* Efecto de pulso para el seleccionado */}
                               {isSelected && (
                                 <div className={`absolute inset-0 ${categoria.color} rounded-full animate-ping opacity-75`}></div>
                               )}
-                              
-                              {/* Botón circular del pin */}
                               <div className={`relative w-full h-full rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 border-2 border-white ${isSelected ? `${categoria.color} text-white scale-110` : 'bg-white text-coffee hover:scale-110 group-hover:bg-beige'}`}>
                                 <Icon className={`w-5 h-5 ${isSelected ? 'text-white' : 'text-coffee'}`} />
                               </div>
@@ -710,34 +731,34 @@ export default function App() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-bl-full -z-0"></div>
                 
                 <div className="w-full h-48 rounded-2xl overflow-hidden mb-6 shadow-md relative z-10">
-                  <img src={puntoSeleccionado.imagen} alt={puntoSeleccionado.nombre} className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" />
-                  <div className={`absolute top-4 right-4 ${categoriasMapa.find(c => c.id === puntoSeleccionado.categoria)?.color || 'bg-terracotta'} text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm flex items-center gap-1`}>
-                    {React.createElement(categoriasMapa.find(c => c.id === puntoSeleccionado.categoria)?.icon || MapPin, { className: "w-3 h-3" })}
-                    {categoriasMapa.find(c => c.id === puntoSeleccionado.categoria)?.nombre}
+                  <img src={seleccionActual.imagen} alt={seleccionActual.nombre} className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" />
+                  <div className={`absolute top-4 right-4 ${categoriasMapa.find(c => c.id === seleccionActual.categoria)?.color || 'bg-terracotta'} text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm flex items-center gap-1`}>
+                    {React.createElement(categoriasMapa.find(c => c.id === seleccionActual.categoria)?.icon || MapPin, { className: "w-3 h-3" })}
+                    {categoriasMapa.find(c => c.id === seleccionActual.categoria)?.nombre}
                   </div>
                 </div>
                 
                 <div className="relative z-10 flex-1 flex flex-col">
-                  <h3 className="font-serif text-4xl text-coffee mb-2 leading-tight">{puntoSeleccionado.nombre}</h3>
-                  <p className="text-terracotta font-bold text-sm mb-4">{puntoSeleccionado.tipo}</p>
+                  <h3 className="font-serif text-4xl text-coffee mb-2 leading-tight">{seleccionActual.nombre}</h3>
+                  <p className="text-terracotta font-bold text-sm mb-4">{seleccionActual.tipo}</p>
                   
                   <div className="bg-white/60 p-4 rounded-xl mb-4">
                     <h4 className="text-xs font-bold text-coffee uppercase tracking-wider mb-2 flex items-center gap-2">
                       <BookOpen className="w-4 h-4 text-terracotta" /> Historia
                     </h4>
-                    <p className="text-sm text-gray-700 leading-relaxed">{puntoSeleccionado.historia}</p>
+                    <p className="text-sm text-gray-700 leading-relaxed">{seleccionActual.historia}</p>
                   </div>
 
                   <div className="bg-white/60 p-4 rounded-xl mb-6 flex-1">
                     <h4 className="text-xs font-bold text-coffee uppercase tracking-wider mb-2 flex items-center gap-2">
                       <Users className="w-4 h-4 text-terracotta" /> Cultura y Tradición
                     </h4>
-                    <p className="text-sm text-gray-700 leading-relaxed">{puntoSeleccionado.cultura}</p>
+                    <p className="text-sm text-gray-700 leading-relaxed">{seleccionActual.cultura}</p>
                   </div>
                   
                   <button 
                     onClick={() => {
-                      setFiltroCiudad(puntoSeleccionado.nombre === "San Juan de Oriente" ? "Masaya" : (puntoSeleccionado.nombre === "León" || puntoSeleccionado.nombre === "Ometepe" || puntoSeleccionado.nombre === "Granada" ? "Todas" : puntoSeleccionado.nombre));
+                      setFiltroCiudad(seleccionActual.departamento || seleccionActual.nombre);
                       cambiarVista('Catálogo de Productos');
                     }}
                     className="w-full bg-coffee hover:bg-terracotta text-white py-4 rounded-xl font-bold transition-colors flex items-center justify-center gap-3 shadow-lg group/btn mt-auto"
