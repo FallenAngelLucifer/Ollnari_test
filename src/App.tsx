@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ShoppingCart, Menu, X, MapPin, ArrowRight, CheckCircle2, Facebook, Instagram, Twitter, Clock, BookOpen, Users, Award, ShieldCheck, TrendingUp, Leaf, PlayCircle, Video, Calendar, Star, Play, Quote, Medal, Heart, Palette, ChevronLeft, ChevronRight, Sparkles, Globe, Map, Navigation, Coffee, Landmark, TreePine, Utensils, Hammer, Filter } from 'lucide-react';
-import { MapaNicaragua as MapaSvg } from './components/MapaSvg';
-import { Marker } from 'react-simple-maps';
+import { MapaNicaragua as MapaSvg, Marker } from './components/MapaSvg';
 
 // --- DATOS DUROS ---
 const categoriasMapa = [
