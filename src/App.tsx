@@ -14,101 +14,79 @@ const categoriasMapa = [
 const puntosMapa = [
   { 
     id: 1, 
-    nombre: "Estelí", 
+    nombre: "Fábrica Joya de Nicaragua", // <-- EL LUGAR
+    departamento: "Estelí",              // <-- LA CIUDAD A RESALTAR
     categoria: "taller",
-    tipo: "Muralismo y Tabaco", 
+    tipo: "Taller Artesanal", 
     coordinates: [-86.35, 13.09],
-    desc: "Conocida por el arte del muralismo y la producción artesanal en cuero y tabaco.", 
-    historia: "Fundada en 1685, Estelí fue un bastión crucial durante la Revolución. Hoy es la capital del tabaco y el muralismo comunitario.",
-    cultura: "Destaca por sus talabarterías donde se trabaja el cuero a mano y sus fábricas de puros de calidad mundial.",
+    historia: "Fundada en 1968, es la fábrica de puros premium más antigua de Nicaragua.",
+    cultura: "El tabaco es el motor económico de Estelí, donde manos expertas enrollan verdaderas obras de arte.",
     imagen: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=500&q=80" 
   },
   { 
     id: 2, 
-    nombre: "León", 
+    nombre: "Catedral de la Asunción", 
+    departamento: "León",
     categoria: "historia",
-    tipo: "Patrimonio Histórico", 
+    tipo: "Patrimonio de la Humanidad", 
     coordinates: [-86.88, 12.43],
-    desc: "Ciudad universitaria llena de historia, poesía y arquitectura colonial.", 
-    historia: "Primera capital de Nicaragua, fundada en 1524. Alberga la Catedral más grande de Centroamérica, Patrimonio de la Humanidad.",
-    cultura: "Cuna de Rubén Darío, padre del Modernismo. Famosa por sus alfombras de aserrín en Semana Santa y la gritería.",
+    historia: "Construida entre 1747 y 1814, es la catedral más grande de Centroamérica.",
+    cultura: "En sus criptas descansan los restos del poeta Rubén Darío. Sus cúpulas blancas son el símbolo de la ciudad.",
     imagen: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=500&q=80" 
   },
   { 
     id: 3, 
-    nombre: "Masaya", 
+    nombre: "Mercado de Artesanías", 
+    departamento: "Masaya",
     categoria: "taller",
-    tipo: "Ciudad Creativa", 
+    tipo: "Centro Cultural", 
     coordinates: [-86.09, 11.97],
-    desc: "Cuna del folklore nicaragüense. Famosa por sus hamacas, cerámica y mercado de artesanías.", 
-    historia: "Conocida como la 'Ciudad de las Flores', Masaya ha mantenido vivas las tradiciones indígenas de la tribu de los Dirianes.",
-    cultura: "Epicentro de la artesanía nacional: hamacas de doble puntada, tallado en madera y el famoso baile de Los Agüizotes.",
+    historia: "Ubicado en el edificio del mercado viejo que data de la época colonial, restaurado a finales de los 90.",
+    cultura: "El punto de encuentro donde se exponen las mejores hamacas, cerámicas y textiles del país.",
     imagen: "https://images.unsplash.com/photo-1618172193622-ae2d025f4032?auto=format&fit=crop&w=500&q=80" 
   },
   { 
     id: 4, 
-    nombre: "San Juan de Oriente", 
+    nombre: "Taller Helio Gutiérrez", 
+    departamento: "Masaya", // Pertenece a Masaya (San Juan de Oriente)
     categoria: "taller",
-    tipo: "Taller de Cerámica", 
+    tipo: "Cerámica Precolombina", 
     coordinates: [-86.07, 11.90],
-    desc: "Pueblo de alfareros donde el barro cobra vida con técnicas precolombinas.", 
-    historia: "Un asentamiento precolombino que ha transmitido el arte de la alfarería de generación en generación durante siglos.",
-    cultura: "El 90% de sus habitantes se dedica a la cerámica, utilizando tornos de pie y hornos de leña tradicionales.",
+    historia: "Taller maestro que ha rescatado y evolucionado las técnicas precolombinas chorotegas.",
+    cultura: "Utilizan tornos de pie, engobes naturales y hornos de leña tradicionales.",
     imagen: "https://images.unsplash.com/photo-1610715936287-6c2420ebbfb1?auto=format&fit=crop&w=500&q=80" 
   },
   { 
     id: 5, 
-    nombre: "Camoapa", 
+    nombre: "Cooperativa de Mujeres", 
+    departamento: "Estelí", // Pertenece a Estelí (San Juan de Limay)
     categoria: "taller",
-    tipo: "Artesanía en Pita", 
-    coordinates: [-85.51, 12.38],
-    desc: "Reconocida por la fina elaboración de sombreros de pita y trabajos en cuero trenzado.", 
-    historia: "Tierra de ganaderos y artesanos, Camoapa desarrolló la técnica del tejido de pita en cuevas para mantener la humedad de la fibra.",
-    cultura: "Los sombreros de pita de Camoapa son considerados los más finos del país, tardando hasta un mes en tejerse uno solo.",
+    tipo: "Artesanía en Piedra", 
+    coordinates: [-86.61, 13.18],
+    historia: "Un colectivo que transformó el tallado de marmolina en el sustento de cientos de familias.",
+    cultura: "Esculturas suaves que representan la vida campesina, como la famosa figura de 'La Gordita'.",
     imagen: "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&w=500&q=80" 
   },
   { 
     id: 6, 
-    nombre: "Solentiname", 
+    nombre: "Comunidad de Pintores", 
+    departamento: "Río San Juan", // Pertenece a Río San Juan (Solentiname)
     categoria: "naturaleza",
-    tipo: "Arte y Naturaleza", 
+    tipo: "Arte Primitivista", 
     coordinates: [-85.03, 11.18],
-    desc: "Archipiélago cuna del arte primitivista y la colorida artesanía en madera de balsa.", 
-    historia: "En los años 60, Ernesto Cardenal fundó aquí una comunidad contemplativa que dio origen al movimiento de arte primitivista nicaragüense.",
-    cultura: "Pinturas vibrantes de flora y fauna local, y tallados en madera de balsa que representan garzas, tucanes y peces.",
+    historia: "Comunidad fundada en los años 60 por Ernesto Cardenal, cuna del arte primitivista nicaragüense.",
+    cultura: "Pinturas vibrantes y tallados en madera de balsa que representan la rica biodiversidad del archipiélago.",
     imagen: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=500&q=80" 
   },
   { 
     id: 7, 
-    nombre: "Rivas", 
-    categoria: "gastronomia",
-    tipo: "Cerámica y Turismo", 
-    coordinates: [-85.82, 11.43],
-    desc: "Tierra de historia, playas y la tradicional cerámica.", 
-    historia: "Lugar del histórico encuentro entre el cacique Nicarao y el conquistador Gil González Dávila en 1523.",
-    cultura: "Famosa por sus jícaras de filigrana, sus playas de surf y su gastronomía a base de plátano y mariscos.",
-    imagen: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=500&q=80" 
-  },
-  { 
-    id: 8, 
-    nombre: "Ometepe", 
-    categoria: "naturaleza",
-    tipo: "Reserva de Biosfera", 
-    coordinates: [-85.55, 11.50],
-    desc: "Isla formada por dos volcanes en el Gran Lago de Nicaragua.", 
-    historia: "Considerada tierra sagrada por las culturas precolombinas, alberga cientos de petroglifos antiguos.",
-    cultura: "Un oasis de paz donde la agricultura tradicional, la pesca y el ecoturismo conviven en armonía.",
-    imagen: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=500&q=80" 
-  },
-  { 
-    id: 9, 
-    nombre: "Granada", 
+    nombre: "Parque Central y Calzada", 
+    departamento: "Granada",
     categoria: "historia",
     tipo: "Arquitectura Colonial", 
     coordinates: [-85.95, 11.93],
-    desc: "La ciudad más antigua de Nicaragua en su asentamiento original.", 
-    historia: "Fundada en 1524 por Francisco Hernández de Córdoba. Sobrevivió a ataques piratas y al incendio de William Walker.",
-    cultura: "Destaca por sus paseos en coche de caballos, el vigorón en el parque central y las Isletas en el lago.",
+    historia: "El corazón de la ciudad fundada en 1524, rodeado de imponentes edificios neoclásicos y coloniales.",
+    cultura: "Lugar ideal para probar el tradicional vigorón mientras se observan los pintorescos coches de caballos.",
     imagen: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=500&q=80" 
   }
 ];
@@ -596,34 +574,36 @@ export default function App() {
   };
 
   const VistaMapa = () => {
-    // Cambiamos el nombre a "seleccionActual" porque puede ser un Departamento o un Lugar específico
-    const [seleccionActual, setSeleccionActual] = useState<any>(puntosMapa[2]); 
+    // 1. Estado inicial genérico (Nicaragua completa)
+    const [seleccionActual, setSeleccionActual] = useState<any>({
+      id: 0,
+      nombre: "Nicaragua",
+      departamento: "", // Vacío para que ningún departamento se resalte al inicio
+      tipo: "Territorio Nacional",
+      historia: "Selecciona un departamento o un punto en el mapa para descubrir los talleres, historia y la riqueza cultural de nuestro país.",
+      cultura: "Nicaragua es tierra de lagos y volcanes, cuna de poetas y de maestros artesanos.",
+      imagen: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=500&q=80"
+    }); 
     const [filtroCategoria, setFiltroCategoria] = useState('todas');
 
     const puntosFiltrados = filtroCategoria === 'todas' 
       ? puntosMapa 
       : puntosMapa.filter(p => p.categoria === filtroCategoria);
 
-    // NUEVA FUNCIÓN: Hace que TODO el mapa sea clickeable
+    // 2. FUNCIÓN AISLADA: Solo se activa al tocar el fondo del mapa (La ciudad/departamento)
     const handleRegionClick = (regionNombre: string) => {
-      // 1. Le agregamos ": any" para que TypeScript no sea tan estricto con la estructura
-      let infoDepto: any = puntosMapa.find(p => p.nombre === regionNombre);
-      
-      // 2. Si haces clic en una ciudad que aún no tiene datos en tu array, le creamos información genérica al vuelo.
-      if (!infoDepto) {
-        infoDepto = {
-          id: Date.now(), // <-- ¡Solución! Ahora el ID es un número único, no un texto.
-          nombre: regionNombre,
-          departamento: regionNombre, 
-          categoria: 'historia',
-          tipo: 'Departamento',
-          historia: `La información histórica y patrimonial de ${regionNombre} estará disponible próximamente en nuestra base de datos.`,
-          cultura: `Explorando las tradiciones, economía creativa y maestros artesanos de la región de ${regionNombre}.`,
-          imagen: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=500&q=80" 
-        };
-      }
-      
-      setSeleccionActual(infoDepto);
+      // Creamos la ficha del departamento. 
+      // Al usar Date.now() como ID, nos aseguramos de que NINGÚN PIN se resalte por accidente.
+      setSeleccionActual({
+        id: Date.now(), 
+        nombre: regionNombre,
+        departamento: regionNombre, // <-- Esto es lo que le dice al SVG que se pinte de color
+        categoria: 'historia',
+        tipo: 'Departamento',
+        historia: `La información histórica, patrimonial y turística del departamento de ${regionNombre} es rica y diversa.`,
+        cultura: `Descubre las tradiciones, economía creativa y maestros artesanos que habitan a lo largo de la región de ${regionNombre}.`,
+        imagen: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=500&q=80" 
+      });
     };
 
     return (
