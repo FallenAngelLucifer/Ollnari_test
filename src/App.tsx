@@ -685,35 +685,10 @@ export default function App() {
                                 <div className={`absolute inset-0 ${categoria.color} rounded-full animate-ping opacity-75`}></div>
                               )}
                               
+                              {/* Botón circular del pin */}
                               <div className={`relative w-full h-full rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 border-2 border-white ${isSelected ? `${categoria.color} text-white scale-110` : 'bg-white text-coffee hover:scale-110 group-hover:bg-beige'}`}>
                                 <Icon className={`w-5 h-5 ${isSelected ? 'text-white' : 'text-coffee'}`} />
                               </div>
-                            </div>
-                          </foreignObject>
-                          
-                          {/* Rich Tooltip en Hover */}
-                          <foreignObject x="-144" y="-280" width="288" height="250" style={{ overflow: 'visible' }} className={`transition-all duration-300 pointer-events-none origin-bottom ${isSelected ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100'}`}>
-                            <div className="w-full bg-white rounded-2xl shadow-2xl border border-beige-dark overflow-hidden flex flex-col h-full">
-                              <div className={`${categoria.color} text-white px-4 py-2 flex items-center gap-2`}>
-                                <Icon className="w-4 h-4" />
-                                <span className="text-xs font-bold uppercase tracking-wider">{categoria.nombre}</span>
-                              </div>
-                              <div className="p-4 flex-1 overflow-y-auto">
-                                <h4 className="font-serif text-xl text-coffee mb-1">{punto.nombre}</h4>
-                                <p className="text-terracotta text-xs font-bold mb-3">{punto.tipo}</p>
-                                
-                                <div className="space-y-2">
-                                  <div className="flex gap-2 items-start">
-                                    <BookOpen className="w-4 h-4 text-coffee-light shrink-0 mt-0.5" />
-                                    <p className="text-xs text-gray-600 leading-relaxed">{punto.historia}</p>
-                                  </div>
-                                  <div className="flex gap-2 items-start">
-                                    <Users className="w-4 h-4 text-coffee-light shrink-0 mt-0.5" />
-                                    <p className="text-xs text-gray-600 leading-relaxed">{punto.cultura}</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 border-8 border-transparent border-t-white"></div>
                             </div>
                           </foreignObject>
                         </g>
